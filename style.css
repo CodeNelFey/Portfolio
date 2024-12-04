@@ -1,0 +1,632 @@
+@font-face {
+    font-family: 'acorn';
+    src: url('./fonts/acorn.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'gt';
+    src: url('./fonts/gt.woff') format('woff');
+}
+
+body {
+    font-family: 'acorn', sans-serif;
+    cursor: url('imgs/cursor.png') 10 4, auto;
+    overflow-x: hidden;
+}
+
+::selection {
+    background: #025a4e;
+    color: #fff;
+}
+
+.fade-in {
+    opacity: 0; /* invisible */
+    transform: translateY(20px) scale(0.75);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+a {
+    cursor: url('imgs/pointer.png') 15 4, auto;
+    text-decoration: none;
+}
+
+/* Style général pour occuper tout l'écran */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+/* Conteneur de l'arrière-plan animé */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+            circle at 50% 50%,
+            #f7dfff, /* Rose pastel */
+            #fff0f0, /* Pêche pastel */
+            #fdfdc4, /* Jaune pastel */
+            #d1f8d7, /* Vert pastel */
+            #c4f2fd, /* Bleu clair pastel */
+            #d8d3f8 150% /* Violet pastel */
+    );
+    background-size: 300% 300%;
+    transition: background-position 0.1s ease-out;
+    z-index: -1;
+}
+
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'gt', serif;
+    z-index: 1000;
+    margin-top: 20px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0.75rem;
+    border-radius: 99px;
+}
+
+.tabs ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tabs li {
+    margin-right: 0.5rem;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 99px;
+    z-index: 2;
+    transition: color 0.15s ease-in;
+    position: relative;
+    color: #025a4e;
+}
+
+.glider {
+    position: absolute;
+    display: flex;
+    height: 30px;
+    width: 60px;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 1; /* Ensure this is lower than the tabs */
+    border-radius: 99px;
+    transition: 0.25s ease-out;
+    pointer-events: none;
+}
+
+.nav-bar {
+    transform: scale(1.5);
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title .top {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title .top h1 {
+    font-size: 7em;
+    color: #025a4e;
+}
+
+.title .top {
+    position: relative; /* Ensure the parent is positioned */
+    margin-top: 100px;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.title .top .star1 {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+}
+
+.title .top .star2 {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+}
+
+.title p {
+    text-align: center;
+    width: 50%;
+    font-family: 'gt', sans-serif;
+    font-size: 1.3em;
+    color: #025a4e;
+    line-height: 1.5;
+}
+
+#work {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10%;
+}
+
+#work h1 {
+    font-size: 6em;
+    color: #025a4e;
+}
+
+#work .container {
+    display: flex;
+    padding: 100px;
+    justify-content: space-around;
+    align-items: end;
+    width: 100%;
+    margin-top: -8%;
+}
+
+#work .container .sectionHyperLink .carte {
+    position: relative;
+    font-family: 'gt', sans-serif;
+    border-radius: 60px;
+    text-align: right;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+#work .container .sectionHyperLink .carte {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    justify-content: space-between;
+    position: relative;
+    flex-direction: column;
+}
+
+#work .container .sectionHyperLink .svg {
+    position: relative;
+    margin-bottom: -10%;
+    margin-left: 15%;
+    transform: scale(0.00001);
+    height: 100px;
+    fill: #fff;
+    z-index: 100;
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.3));
+    transition: 0.3s;
+}
+
+#work .container .sectionHyperLink .carte .text {
+    width: 100%;
+}
+
+#work .container .sectionHyperLink .carte .text h1, p {
+    color: #364442;
+    position: relative;
+    right: 30px;
+    top: 10px;
+}
+
+#work .container .sectionHyperLink .carte .text h1 {
+    font-family: 'acorn', sans-serif;
+    margin-top: -10px;
+    font-size: 2.5em;
+}
+
+#work .container .sectionHyperLink .carte .img {
+    width: 200%;
+    position: relative;
+    left: 70%;
+    top: 10%;
+    transition: 0.3s;
+}
+
+#work .container .sectionHyperLink:hover {
+    margin-top: 6px; /* Adjust the value as needed */
+}
+
+#work .container .sectionHyperLink:hover .carte{
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
+    margin-top: 0;
+}
+
+#work .container .sectionHyperLink:hover .img {
+    top: 15%;
+    filter: drop-shadow(0 0 80px rgba(0, 0, 0, 0.2));
+}
+
+#work .container .sectionHyperLink:hover .svg {
+    display: block;
+    transform: rotate(-15deg) scale(1);
+    height: 100px;
+}
+
+#work .container .photo .carte {
+    background: linear-gradient(45deg, #efbfff, #dc7aff, #b857ff);
+    width: 500px;
+    height: 500px;
+}
+
+#work .container .project .carte {
+    background: linear-gradient(45deg, #aaffd1, #5dffa7, #3ac685);
+    width: 1000px;
+    height: 500px;
+}
+
+#work .container .project .svg {
+    margin-bottom: -5%;
+}
+
+#work .container .project .carte .img {
+    width: 100%;
+    left: 10%;
+}
+
+#work .container .project:hover {
+    margin-top: 6px; /* Adjust the value as needed */
+}
+
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#about h1 {
+    font-size: 6em;
+    color: #025a4e;
+}
+
+#about .container {
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#about .container .text {
+     width: 20%;
+ }
+
+#about .container .img img{
+    border-radius: 999px 999px 0 0;
+    height: 300px;
+    width: 250px;
+    object-fit: cover;
+    object-position: -180px;
+}
+
+#about .container .text {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+#about .container .text h1 {
+    font-size: 3em;
+    width: 100%;
+}
+
+#about .container .text p {
+    font-family: 'gt', sans-serif;
+    font-size: 1.2em;
+    color: #025a4e;
+    line-height: 1.5;
+    right: 0;
+    width: 100%;
+}
+
+#time {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+#time h1 {
+    font-size: 6em;
+    color: #025a4e;
+}
+
+#time .timeline {
+    width: 80%;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#time .timeline .section {
+    height: 100px;
+    background-color: #025a4e;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#time .timeline .soonSection {
+    display: flex;
+}
+
+#time .section h2 {
+    margin-bottom: -20px;
+    width: 80%;
+    color: #fff;
+}
+
+#time .section p {
+    left: 0;
+    width: 80%;
+    color: #889882;
+}
+
+#time .section span {
+    color: #889882;
+    font-family: 'gt', sans-serif;
+    font-size: 0.7em;
+}
+
+#time .timeline .soonSection {
+    height: 94px;
+    background-color: #00000000;
+    border: dashed #025a4e 3px;
+    border-radius: 999px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#time .timeline .soonSection h2 {
+    margin-bottom: -20px;
+    color: #025a4e;
+    width: 80%;
+}
+
+#time .timeline .soonSection p {
+    color: #048875;
+    right: 0;
+    width: 80%;
+}
+
+#time .timeline .soonSection span {
+    color: #048875;
+    font-family: 'gt', sans-serif;
+    font-size: 0.7em;
+}
+
+#time .timeline .doubleSection {
+    display: flex;
+    width: 40%;
+    margin-left: 30%;
+}
+
+#time .timeline .section {
+    width: 50%;
+}
+
+#time .timeline .soonSection {
+    width: 50%;
+}
+
+#time .timeline .lycee {
+    width: 30%;
+}
+
+#time .timeline .doubleSection .iut {
+    width: 70%;
+    border-radius: 999px 0 0 999px;
+}
+#time .timeline .doubleSection .iutsoon {
+    width: 30%;
+    border-radius: 0 999px 999px 0;
+}
+
+#time .timeline .doubleSection .iutsoon {
+    border-left: solid #025a4e 3px;
+}
+
+#time .timeline .polytech {
+    width: 30%;
+    margin-left: 70%;
+}
+
+#contact h1 {
+    font-size: 6em;
+    color: #025a4e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#contact .content .contactLink {
+    background: linear-gradient(20deg, #ff9e9e, #fd5050, #c43737);
+    width: 20%;
+    height: 90px;
+    border-radius: 999px;
+    color: #fff;
+    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: 0.3s;
+}
+
+#contact .content .contactLink .contentText {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#contact .content .contactLink .text {
+    height: 200%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+
+#contact .content .contactLink .text .one,.two {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact .content .contactLink .text .one {
+    font-size: 2em;
+}
+
+#contact .content .contactLink img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(0deg) scale(0.00001);
+    z-index: 100;
+    height: 80px;
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.3));
+    transition: 0.3s;
+}
+
+#contact .content .contactLink:hover img {
+    position: absolute;
+    top: -30%;
+    left: -5%;
+    transform: rotate(-30deg);
+    z-index: 100;
+    height: 80px;
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.3));
+}
+
+#contact .content .contactLink:hover {
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
+    content: "sohan.birotheau@gmial.com";
+}
+
+#contact .content .contactLink:hover .text {
+    transform: translateY(-90px);
+}
+
+#contact .content .tel {
+    background: linear-gradient(20deg, #a1ff9e, #61fd50, #56c437);
+}
+
+#contact .content .tel img {
+    transform: rotate(40deg) scale(0.00001);
+}
+
+#contact .content .tel:hover img {
+    transform: rotate(0);
+}
+
+#contact .content .linkedin {
+    background: linear-gradient(20deg, #9ec8ff, #50a1fd, #3768c4);
+}
+
+
+
+footer {
+    width: 95%;
+    margin: 2.5%;
+    margin-top: 10%;
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+}
+
+@media (max-width: 1000px) {
+    .title .top {
+        transform: scale(0.5);
+    }
+}
+
+@media (max-width: 800px) {
+
+    .nav-bar {
+        transform: scale(0.8);
+    }
+
+    #work {
+        transform: scale(0.5);
+    }
+
+    .title .top {
+        width: 190%;
+    }
+
+    .title .top h1 {
+        font-size: 5em;
+    }
+
+    #project {
+        transform: scale(0.5);
+    }
+    #work {
+        transform: scale(0.5);
+    }
+
+
+    .background {
+        transform: scale(2);
+    }
+}
