@@ -18,10 +18,7 @@ function setGliderPosition(index) {
             glider.style.transform = `translateX(${index * 115}%)`;
             glider.style.width = '50px'
         } else if (index === 3) {
-            glider.style.transform = `translateX(${index * 94}%)`;
-            glider.style.width = '60px'
-        } else if (index === 4) {
-            glider.style.transform = `translateX(${index * 80}%)`;
+            glider.style.transform = `translateX(${index * 79}%)`;
             glider.style.width = '70px'
         }
     } else {

@@ -582,6 +582,20 @@ body, html {
     background: linear-gradient(20deg, #9ec8ff, #50a1fd, #3768c4);
 }
 
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 10px;
+    width: 90%;
+    margin: 5%;
+}
+
+.image-grid img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
 
 
 footer {
@@ -606,8 +620,18 @@ footer {
         transform: scale(0.8);
     }
 
-    #work {
-        transform: scale(0.5);
+    .title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .title p {
+        margin: 0 auto;
+        text-align: center;
+        left: 0;
+        width: 90%;
+        margin-top: -20%;
     }
 
     .title .top {
@@ -618,15 +642,163 @@ footer {
         font-size: 5em;
     }
 
-    #project {
-        transform: scale(0.5);
-    }
     #work {
-        transform: scale(0.5);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
+    #work .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #work > h1 {
+        font-size: 3em;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 100px 0 -100px 0;
+    }
+
+    #work .container .photo .carte {
+        width: 300px;
+        height: 300px;
+        border-radius: 30px;
+    }
+
+    #work .container .photo .carte .text h1{
+        font-size: 2em;
+        align-items: end;
+    }
+
+    #work .container .photo .carte .text p{
+        font-size: 0.8em;
+    }
+
+    #work .container .project .carte {
+        width: 300px;
+        height: 300px;
+        border-radius: 30px;
+    }
+
+    #work .container .project .carte .text h1{
+        font-size: 2em;
+        align-items: end;
+    }
+
+    #work .container .project .carte .text p{
+        font-size: 0.8em;
+    }
+
+    #work .container .project .carte .img {
+        width: 200%;
+        left: 70%;
+        top: 10%;
+    }
+
+    #about h1 {
+        font-size: 3em;
+    }
+
+    #about .container {
+        flex-direction: column;
+    }
+
+    #about .container .text {
+        width: 90%;
+    }
+
+    #about .container .text h1 {
+        font-size: 2em;
+    }
+
+    #about .container .text p {
+        font-size: 1em;
+    }
+
+    #time h1 {
+        font-size: 3em;
+    }
+
+    #time .timeline {
+        width: 90%;
+    }
+
+    #time .timeline .section h2 {
+        font-size: 1em;
+    }
+
+    #time .timeline .section p {
+        font-size: 0.7em;
+    }
+
+    #time .timeline .soonSection h2 {
+        font-size: 1em;
+    }
+
+    #time .timeline .soonSection p {
+        font-size: 0.7em;
+    }
+
+    #time .timeline .section {
+        height: 90px;
+        margin-bottom: 5px;
+    }
+
+    #time .timeline .soonSection {
+        height: 84px;
+        margin-bottom: 5px;
+    }
+
+    #time .timeline .lycee {
+        width: 80%;
+    }
+
+    #time .timeline .doubleSection {
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    #time .timeline .doubleSection .soonSection {
+        margin-left: -3px;
+    }
+
+    #time .timeline .polytech {
+        width: 80%;
+        margin-left: 20%;
+    }
+
+
+
+    #contact h1 {
+        font-size: 3em;
+    }
+
+    #contact .content {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #contact .content .contactLink {
+        width: 90%;
+        margin-bottom: 20px;
+    }
 
     .background {
         transform: scale(2);
+    }
+
+    /*IMAGES.HTML*/
+    .image-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    .image-grid img {
+        height: 200px;
     }
 }
