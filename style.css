@@ -241,14 +241,18 @@ body, html {
 #work .container .sectionHyperLink .carte .text h1, p {
     color: #364442;
     position: relative;
-    right: 30px;
     top: 10px;
+}
+
+#work .container .sectionHyperLink .carte .text p {
+    right: 30px;
 }
 
 #work .container .sectionHyperLink .carte .text h1 {
     font-family: 'acorn', sans-serif;
     margin-top: -10px;
     font-size: 2.5em;
+    right: 30px;
 }
 
 #work .container .sectionHyperLink .carte .img {
@@ -596,6 +600,130 @@ body, html {
     object-fit: cover;
     border-radius: 10px;
 }
+
+/*PROJECTS*/
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+#projects h1 {
+    color: #025a4e;
+    font-size: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#projects .container {
+    display: flex;
+    padding: 100px;
+    justify-content: space-around;
+    align-items: end;
+    width: 100%;
+    margin-top: -8%;
+}
+
+#projects .container .sectionHyperLink .carte {
+    position: relative;
+    font-family: 'gt', sans-serif;
+    border-radius: 60px;
+    text-align: right;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+#projects .container .sectionHyperLink .carte {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    justify-content: space-between;
+    position: relative;
+    flex-direction: column;
+}
+
+#projects .container .sectionHyperLink .svg {
+    position: relative;
+    margin-bottom: -10%;
+    margin-left: 15%;
+    transform: scale(0.00001);
+    height: 100px;
+    fill: #fff;
+    z-index: 100;
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.3));
+    transition: 0.3s;
+}
+
+#projects .container .sectionHyperLink .carte .text {
+    width: 100%;
+}
+
+#projects .container .sectionHyperLink .carte .text h1, p {
+    color: #364442;
+    position: relative;
+    top: 10px;
+}
+
+#projects .container .sectionHyperLink .carte .text p {
+    right: 30px;
+}
+
+#projects .container .sectionHyperLink .carte .text h1 {
+    font-family: 'acorn', sans-serif;
+    margin-top: -10px;
+    font-size: 2.5em;
+}
+
+#projects .container .sectionHyperLink .carte .img {
+    width: 200%;
+    position: relative;
+    left: 70%;
+    top: 10%;
+    transition: 0.3s;
+}
+
+#projects .container .sectionHyperLink:hover {
+    margin-top: 6px; /* Adjust the value as needed */
+}
+
+#projects .container .sectionHyperLink:hover .carte{
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
+    margin-top: 0;
+}
+
+#projects .container .sectionHyperLink:hover .img {
+    top: 15%;
+    filter: drop-shadow(0 0 80px rgba(0, 0, 0, 0.2));
+}
+
+#projects .container .sectionHyperLink:hover .svg {
+    display: block;
+    transform: rotate(-15deg) scale(1);
+    height: 100px;
+}
+
+#projects .container .sectionHyperLink .carte {
+    background: linear-gradient(45deg, #efbfff, #dc7aff, #b857ff);
+    width: 500px;
+    height: 500px;
+}
+
+#projects .container .quadtree .carte {
+    background: linear-gradient(45deg, #ffe1bf, #ffbd7a, #ff9d57);
+}
+
+#projects .container .TCGuide .carte {
+    background: linear-gradient(45deg, #d9ffbf, #a0ff7a, #87ff57);
+}
+
+#projects .container .stickgame .carte {
+    background: linear-gradient(45deg, #fdbfff, #f27aff, #e957ff);
+}
+
 
 
 footer {
