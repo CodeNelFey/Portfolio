@@ -628,6 +628,17 @@ body, html {
     margin-top: -8%;
 }
 
+#projects .container .sectionHyperLink {
+    background: none;
+    border: none;
+    padding: 0;
+    position: relative;
+}
+
+#projects .content .sectionHyperLink .svg {
+    position: absolute;
+}
+
 #projects .container .sectionHyperLink .carte {
     position: relative;
     font-family: 'gt', sans-serif;
@@ -724,6 +735,74 @@ body, html {
     background: linear-gradient(45deg, #fdbfff, #f27aff, #e957ff);
 }
 
+#details > div {
+    display: none;
+    padding: 50px;
+    background-color: #222222;
+    width: 80%;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+}
+
+#details div .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#details div .content .otherElements {
+    position: relative;
+}
+
+#details div .content .otherElements img {
+    border-radius: 20px;
+    height: 500px;
+    width: 500px;
+    object-fit: cover;
+    object-position: left;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+#details div .content .otherElements a {
+    position: absolute;
+    bottom: 5%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #025a4e;
+    color: #fff;
+    backdrop-filter: blur(20px);
+    height: 30px;
+    border-radius: 1000px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: 0.3s;
+}
+
+#details div .content .otherElements a:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    transform: translate(-50%, 0) scale(1.02);
+}
+
+#details div .content .text {
+    height: 100%;
+    width: 65%;
+}
+
+#details div .content .text h1 {
+    color: #025a4e;
+    font-size: 5em;
+    margin: 0;
+}
+
+#details div .content .text p {
+    font-family: 'gt';
+}
 
 
 footer {

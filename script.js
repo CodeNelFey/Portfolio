@@ -82,9 +82,41 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeElements.forEach(element => observer.observe(element));
 });
 
+function showQuadtree() {
+    const textContent = document.getElementById('quadtreeDesc')
+    const textContentOtherOne = document.getElementById('tcguideDesc')
+    const textContentOtherTwo = document.getElementById('stickgameDesc')
+    if (textContent.style.display === "flex") {
+        textContent.style.display = "none";
+    } else {
+        textContent.style.display = "flex";
+        textContentOtherOne.style.display = "none"
+        textContentOtherTwo.style.display = "none"
+    }
+}
 
+function showTCGuide() {
+    const textContent = document.getElementById('tcguideDesc')
+    const textContentOtherOne = document.getElementById('quadtreeDesc')
+    const textContentOtherTwo = document.getElementById('stickgameDesc')
+    if (textContent.style.display === "flex") {
+        textContent.style.display = "none";
+    } else {
+        textContent.style.display = "flex";
+        textContentOtherOne.style.display = "none"
+        textContentOtherTwo.style.display = "none"
+    }
+}
 
-
-
-
-
+function showStickgame() {
+    const textContent = document.getElementById('stickgameDesc')
+    const textContentOtherOne = document.getElementById('tcguideDesc')
+    const textContentOtherTwo = document.getElementById('quadtreeDesc')
+    if (textContent.style.display === "flex") {
+        textContent.style.display = "none";
+    } else {
+        textContent.style.display = "flex";
+        textContentOtherOne.style.display = "none"
+        textContentOtherTwo.style.display = "none"
+    }
+}
