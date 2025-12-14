@@ -1,0 +1,110 @@
+/* src/Styles/Hero.css */
+
+.hero-section {
+    height: 100vh;
+    /* Utilisation de svh pour éviter les sauts sur mobile avec la barre d'adresse */
+    height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 0 1rem; /* Sécurité pour ne pas toucher les bords */
+    box-sizing: border-box;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    width: 100%;
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: linear-gradient(180deg, #ffffff 0%, #666666 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 15px rgba(255,255,255,0.15));
+    line-height: 1.1; /* Important pour éviter le chevauchement si le titre passe sur 2 lignes */
+}
+
+.hero-subtitle {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #888;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px 30px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: default;
+
+    /* Empêche le texte de dépasser sur très petit écran */
+    max-width: 90%;
+    box-sizing: border-box;
+}
+
+.hero-subtitle:hover {
+    color: #0071e3;
+    background: rgba(0, 113, 227, 0.15);
+    border-color: rgba(0, 113, 227, 0.5);
+    box-shadow: 0 0 20px rgba(0, 113, 227, 0.25);
+    transform: scale(1.05);
+    letter-spacing: 0.35em;
+}
+
+.logo-container {
+    margin-top: 3rem;
+    padding: 20px;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.hero-logo {
+    width: 200px;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+
+    .hero-title {
+        /* On réduit drastiquement la taille */
+        font-size: 2.5rem;
+        /* On réduit l'espacement pour que ça tienne en largeur */
+        letter-spacing: 0.05em;
+    }
+
+    .hero-subtitle {
+        margin-top: 1rem;
+        font-size: 0.75rem; /* Un peu plus petit */
+        letter-spacing: 0.15em; /* Moins espacé pour éviter les retours à la ligne moches */
+        padding: 10px 20px;
+        white-space: normal; /* Autorise le retour à la ligne si nécessaire */
+    }
+
+    /* Ajustement du hover sur mobile (souvent au clic/tap) */
+    .hero-subtitle:hover {
+        /* On réduit l'effet d'agrandissement sur mobile pour ne pas sortir de l'écran */
+        transform: scale(1.02);
+        letter-spacing: 0.15em;
+    }
+
+    .logo-container {
+        margin-top: 2rem; /* Moins d'espace */
+        padding: 15px;
+    }
+
+    .hero-logo {
+        width: 140px; /* Logo plus petit */
+    }
+}

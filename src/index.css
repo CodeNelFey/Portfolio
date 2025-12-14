@@ -1,0 +1,11 @@
+:root {
+    background-color: #000;
+}
+
+p {
+    font-family: "Alexandria", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    color: #fff;
+}

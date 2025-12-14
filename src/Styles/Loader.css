@@ -1,0 +1,79 @@
+/* src/Styles/Loader.css */
+
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #050505; /* Noir profond */
+    z-index: 9999; /* Au-dessus de tout, même des modales */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+
+    /* L'animation de sortie (le rideau) */
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* Quand le chargement est fini, le rideau monte */
+.loader-container.fade-out {
+    transform: translateY(-100%);
+}
+
+.loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 300px;
+}
+
+/* Le gros chiffre */
+.loader-counter {
+    font-family: 'Montserrat', sans-serif; /* Ou une police monospace */
+    font-size: 6rem;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: -2px;
+
+    /* Dégradé métallique sur le texte */
+    background: linear-gradient(to right, #fff, #666);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* La barre de progression (Fond) */
+.loader-bar-bg {
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* La barre de progression (Remplissage) */
+.loader-bar-fill {
+    height: 100%;
+    background: #0071e3; /* Bleu Apple */
+    box-shadow: 0 0 10px #0071e3; /* Effet néon */
+    transition: width 0.1s linear;
+}
+
+/* Petit texte en bas */
+.loader-text {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: #666;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
