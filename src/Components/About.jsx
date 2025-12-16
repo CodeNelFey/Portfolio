@@ -3,7 +3,7 @@ import { useLanguage } from '../context/LanguageContext';
 import '../Styles/About.css';
 // Remplace par ton image réelle
 //const profileImg = "https://placehold.co/600x800/1a1a1a/FFFFFF?text=PHOTO";
-import profileImg from "../assets/photo.png"
+import profileImg from "../assets/photo.webp"
 
 const About = () => {
     const { t } = useLanguage();

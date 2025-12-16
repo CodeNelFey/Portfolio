@@ -3,19 +3,16 @@ import { createPortal } from 'react-dom';
 import { useLanguage } from '../context/LanguageContext';
 import '../Styles/Projects.css';
 
-// --- IMPORTS IMAGES (Modifie selon tes vrais fichiers) ---
-import imgPortfolio from '../assets/portfolio.png';
-import imgHelloSchool from '../assets/helloschool.png';
-import imgGamble from '../assets/soon.png';
-import imgSoon from '../assets/soon.png';
-import imgIaippon from '../assets/iaippon.png';
+import imgPortfolio from '../assets/portfolio.webp';
+import imgHelloSchool from '../assets/helloschool.webp';
+import imgGamble from '../assets/soon.webp';
+import imgSoon from '../assets/soon.webp';
+import imgIaippon from '../assets/iaippon.webp';
 import imgDefault from '../assets/react.svg';
 
 const Projects = () => {
     const { t } = useLanguage();
     const [selectedProject, setSelectedProject] = useState(null);
-
-    // Refs pour le scroll spy mobile
     const containerRef = useRef(null);
     const [activeCardIndex, setActiveCardIndex] = useState(null);
 
@@ -27,12 +24,10 @@ const Projects = () => {
         'soon': imgSoon,
     };
 
-    // Scroll Spy pour détecter la carte au centre sur mobile
     useEffect(() => {
         const container = containerRef.current;
         if (!container) return;
 
-        // Sur desktop, on ne veut pas de ce système
         if (window.matchMedia('(min-width: 769px)').matches) {
             setActiveCardIndex(null);
             return;
@@ -41,7 +36,6 @@ const Projects = () => {
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
-                    // Si la carte est bien visible au centre
                     if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
                         setActiveCardIndex(Number(entry.target.dataset.index));
                     }
@@ -49,7 +43,7 @@ const Projects = () => {
             },
             {
                 root: container,
-                threshold: [0.6, 0.7, 0.8], // Plusieurs seuils pour la précision
+                threshold: [0.6, 0.7, 0.8],
             }
         );
 
@@ -76,7 +70,6 @@ const Projects = () => {
             <div className="projects-container" ref={containerRef}>
                 {t.projects.items.map((project, index) => {
                     const projectImage = imageMap[project.imgKey] || imgDefault;
-                    // isActive est true seulement sur mobile pour la carte du centre
                     const isActive = index === activeCardIndex;
 
                     return (
@@ -87,7 +80,13 @@ const Projects = () => {
                             onClick={() => openProject(project, projectImage)}
                         >
                             <div className="card-image-box">
-                                <img src={projectImage} alt={project.title} />
+                                {/* OPTIMISATION: lazy loading pour ne pas bloquer le chargement initial */}
+                                <img
+                                    src={projectImage}
+                                    alt={project.title}
+                                    loading="lazy"
+                                    decoding="async"
+                                />
                             </div>
 
                             <div className="card-content">
@@ -108,7 +107,6 @@ const Projects = () => {
                 })}
             </div>
 
-            {/* Modale inchangée */}
             {selectedProject && createPortal(
                 <div className="project-modal-overlay" onClick={closeProject}>
                     <div className="project-modal-content" onClick={(e) => e.stopPropagation()}>

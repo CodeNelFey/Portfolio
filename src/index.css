@@ -2,6 +2,11 @@
     background-color: #000;
 }
 
+/* AJOUT: C'est cette ligne qui gère le scroll fluide désormais, sans ralentir le site */
+html {
+    scroll-behavior: smooth;
+}
+
 p {
     font-family: "Alexandria", sans-serif;
     font-optical-sizing: auto;
